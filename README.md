@@ -37,3 +37,13 @@ Now run the following command to start the server:
 ```bash
 python3 manage.py runserver
 ```
+
+# Create Superuser
+
+By default there is no superuser. To create a superuser, run the following command:
+
+```bash
+python3 manage.py createsuperuser
+```
+
+Fillup the details and you are good to go.
