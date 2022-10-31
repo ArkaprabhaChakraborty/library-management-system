@@ -8,7 +8,9 @@ LABEL Author="Aniruddha"
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED=1
 
-#switch to /lms directory so that everything runs from here
+RUN mkdir /lms
+
+#switch to /app directory so that everything runs from here
 WORKDIR /lms
 
 #copy the app code to image working directory
