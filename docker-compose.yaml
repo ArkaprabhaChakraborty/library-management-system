@@ -2,6 +2,7 @@ version: "3"
 services:
   backend:
     tty: true
+    image: lms-backend:0.0.1
     build: .
     container_name: lms-backend
     command: python manage.py runserver 0.0.0.0:8000
