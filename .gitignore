@@ -96,4 +96,3 @@ GitHub.sublime-settings
 .history
 
 # Ignore migrations
-*/migrations/
