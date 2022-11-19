@@ -1,9 +1,14 @@
 <nav
-  class="container md:mx-auto max-w-5xl p-2 border-b-2 border-pink-500 sm:place-items-center flex flex-col sm:flex-row justify-between"
+  class="container md:mx-auto max-w-1xl p-2 border-b-2 border-gray-300 sm:place-items-center flex flex-col sm:flex-row justify-between"
 >
   <div class="justify-between sm:justify-start w-full flex">
-    <a class="font-bold text-pink-500 text-xl sm:text-3xl" href="/"
-      >Library Management</a
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-yellow-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+    </svg>
+    <a class="font-bold text-black px-2 pt-1 text-xl sm:text-2xl" href="/"
+      >Library Management System</a
     >
     <button id="ham" class="w-8 sm:hidden">
       <svg
@@ -27,9 +32,18 @@
     class="w-full pr-2 lg:pr-4 xl:pr-0 lg:w-2/3 justify-end items-end sm:items-center flex flex-col sm:flex-row space-x-4"
   >
     {% if user.is_anonymous %}
-    <li><a class="hover:underline" href="/student/login">Login</a></li>
-    <li><a class="hover:underline" href="/student/signup">Signup</a></li>
-    <li><a class="hover:underline" href="/admin/">Admin Dashboard</a></li>
+    <li><a href="/student/login"><button
+      class="hover:bg-yellow-400 bg-yellow-500 text-white rounded px-4 py-1"
+      name="Login"
+    >Login</button></a></li>
+    <li><a href="/student/signup"><button
+      class="hover:bg-gray-200 text-gray-700 bg-gray-100 rounded px-4 py-1"
+      name="Signup"
+    >Signup</button></a></li>
+    <li><a href="/admin/"><button
+      class="hover:bg-blue-400 bg-blue-500 text-white rounded px-4 py-1"
+      name="Admin DashBoard"
+    >Admin Dashboard</button></a></li>
     {% elif user.is_superuser %}
     <!-- <li><a class="hover:underline" href="/addbook/">Add Book</a></li> -->
     <li><a class="hover:underline" href="/all-issues/"> Issue Requests</a></li>

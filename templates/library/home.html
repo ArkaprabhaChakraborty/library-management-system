@@ -1,77 +1,106 @@
-{% extends 'base.html' %} {% block heading %} Books List {% endblock heading %}
+{% extends 'base.html' %} {% block heading %}  {% endblock heading %}
 <!--  -->
 {% block content %}
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex pb-10 px-5 py-24 items-center justify-center flex-col">
+      <img class="lg:w-4/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="CAnnot load image"
+          src="https://img.freepik.com/free-vector/people-library-flat-vector-illustration_74855-6607.jpg?w=1380&t=st=1665323699~exp=1665324299~hmac=738bd8ed5b480d6bc468da061461776b9db2dee4bb9f9fda94a0d924e2113e13">
+      <div class="text-center lg:w-2/3 w-full">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to the Library</h1>
+          <p class="mb-8 leading-relaxed">Everything you need for better future and success has already been written. And guess what? All you have to do is go to the library. The library is the temple of learning, and learning has liberated more people than all the wars in history. Why buy a book when you can join our library.</p>
+          <div class="flex justify-center gap-4">
+            <a href="/student/signup"><button
+              class="hover:bg-gray-200 text-gray-700 bg-gray-100 rounded px-4 py-1"
+              name="Signup"
+            >Register Now</button> </a>
+                  
+                  <a href="/student/login"><button
+                    class="hover:bg-yellow-400 bg-yellow-500 text-white rounded px-4 py-1"
+                    name="Login"
+                  >Sign
+                  In</button> </a>
+          </div>
+      </div>
+  </div>
+
+  <hr class="my-4 mx-auto w-96 h-1 bg-gray-200 rounded border-0 md:my-10 dark:bg-gray-700">
+
+</section>
 <!-- searchbar -->
-<form class="flex sm:flex-row flex-col" action="/search/">
+<section class="text-gray-600 body-font">
+<form class="flex sm:flex-row mt-20 ml-60 flex-col" action="/search/">
   <div
     class="w-full md:w-1/2 l:w-1/3 flex flex-col sm:flex-row sm:items-center"
   >
-    <label class="text-lg" for="search-query">Search :</label>
+    <label class="text-lg text-gray-500 font-bold" for="search-query">Search :</label>
     <input
-      class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-white border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-white"
+      class="w-full sm:w-2/3 px-2 py-1 bg-gray-100 border-gray-300 border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
       type="text"
       name="search-query"
+      placeholder="Search"
       id="search"
     />
   </div>
   <div class="flex space-x-4 mt-4 sm:mt-0 flex-row sm:items-center">
     <button
-      class="text-white hover:shadow-md rounded bg-blue-600 px-4 py-1 text-gray-100"
+      class="text-white hover:shadow-md hover:bg-blue-400 rounded bg-blue-500 px-4 py-1 text-gray-100"
       name="author"
     >
       Author
     </button>
     <button
-      class="hover:shadow-md bg-yellow-400 text-gray-900 rounded px-4 py-1"
+      class="hover:bg-yellow-400 bg-yellow-500 text-white rounded px-4 py-1"
       name="book"
     >
       Book
     </button>
   </div>
 </form>
+
 <!-- sorting alphabetically -->
 <form
-  class="flex flex-col sm:flex-row sm:space-x-4 mt-8 sm:items-center"
+  class="flex flex-col sm:flex-row sm:space-x-4 mt-8 ml-60 sm:items-center"
   action="/sort/"
 >
-  <h3>Sort :</h3>
+  <h3 class="text-gray-500 font-bold">Sort :</h3>
   <select
-    class="rounded focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-500 text-base pr-3 pl-1 text-gray-900"
+    class="rounded focus:outline-none border-gray-400 focus:ring-2 focus:ring-red-200 focus:border-red-500 text-base pr-3 pl-1 text-gray-600 bg-gray-100 "
     name="sort_type"
     id="sort_type"
   >
-    <option value="book">book</option>
+    <option text="gray" value="book">book</option>
     <option value="author">author</option>
   </select>
   <ul id="sortable" class="flex flex-wrap space-x-1">
-    <li><button name="sort" value="A">A</button></li>
-    <li><button name="sort" value="B">B</button></li>
-    <li><button name="sort" value="C">C</button></li>
-    <li><button name="sort" value="D">D</button></li>
-    <li><button name="sort" value="E">E</button></li>
-    <li><button name="sort" value="F">F</button></li>
-    <li><button name="sort" value="G">G</button></li>
-    <li><button name="sort" value="H">H</button></li>
-    <li><button name="sort" value="I">I</button></li>
-    <li><button name="sort" value="J">J</button></li>
-    <li><button name="sort" value="K">K</button></li>
-    <li><button name="sort" value="L">L</button></li>
-    <li><button name="sort" value="M">M</button></li>
-    <li><button name="sort" value="N">N</button></li>
-    <li><button name="sort" value="O">O</button></li>
-    <li><button name="sort" value="P">P</button></li>
-    <li><button name="sort" value="Q">Q</button></li>
-    <li><button name="sort" value="R">R</button></li>
-    <li><button name="sort" value="S">S</button></li>
-    <li><button name="sort" value="T">T</button></li>
-    <li><button name="sort" value="U">U</button></li>
-    <li><button name="sort" value="V">V</button></li>
-    <li><button name="sort" value="W">W</button></li>
-    <li><button name="sort" value="X">X</button></li>
-    <li><button name="sort" value="Y">Y</button></li>
-    <li><button name="sort" value="Z">Z</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="A">A</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="B">B</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="C">C</button></li>
+    <li><button class="hover:text-red-500" class="hover:text-red-500" name="sort" value="D">D</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="E">E</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="F">F</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="G">G</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="H">H</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="I">I</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="J">J</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="K">K</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="L">L</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="M">M</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="N">N</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="O">O</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="P">P</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="Q">Q</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="R">R</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="S">S</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="T">T</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="U">U</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="V">V</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="W">W</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="X">X</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="Y">Y</button></li>
+    <li><button class="hover:text-red-500" name="sort" value="Z">Z</button></li>
   </ul>
 </form>
+</section>
 <!-- all books -->
 <ul
   class="mt-10 md:px-4 lg:px-12 xl:px-0 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4"
@@ -192,6 +221,234 @@
   {% endfor %}
 </ul>
 {% endif %}
+<section class="text-gray-600 bg-gray-100 my-10 p-8 pb-2 body-font">
+  <div class="container px-5 py-12 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Trending Books</h1>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1212&q=80">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #1</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Psychology of Money</h1>
+            <p class="leading-relaxed">How one takes a financial decision or the motivations that drive a person to do seemingly bizarre things, when it comes to money.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1212&q=80">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #2</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">How Innovation Works</h1>
+            <p class="leading-relaxed">This book uses various examples of innovations historically and recently to show what Innovation really is.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.unsplash.com/photo-1633477189729-9290b3261d0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1022&q=80">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #3</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Picture of Dorian Gray</h1>
+            <p class="leading-relaxed">The Picture of Dorian Gray is a philosophical novel by Irish writer Oscar Wilde. It is loved by readers everywhere.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col text-center w-full pt-20 mb-14">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Students' Choice</h1>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://localmt.in/wp-content/uploads/2022/07/154398-scaled.jpg">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #4</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Engineering Mathematics by Das and Pal</h1>
+            <p class="leading-relaxed">This book is part of a series that completely covers the engineering mathematics syllabus in BTech.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+      </div>
+      <div class="lg:w-1/3 sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://www.eapublications.org/webroot/img/uploads/product_image/1664443874WhatsAppImage2022-09-29at13.48.44.jpeg">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #5</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">GATE ECE Solved Papers</h1>
+            <p class="leading-relaxed">GATE ECE Solved Papers is the collection of past 20 years question papers of GATE. Useful for students appearing for GATE.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+      </div>
+      <div class="lg:w-1/3 items-center sm:w-1/2 p-4">
+        <div class="flex relative">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://media.takealot.com/covers_images/a64cc4a890cf4f19a36a95c8bb3832cc/s-pdpxl.file">
+          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+            <h2 class="tracking-widest text-sm title-font font-medium text-yellow-500 mb-1">TRENDING #6</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Computer Networking</h1>
+            <p class="leading-relaxed">This book provides an entire walkthrough with the core concepts of Computer Networking in details. Ir provides c complete guide.</p>
+          </div>
+        </div>
+        <div class="text-center pt-7 mb-76 pb-1">
+          <button
+            class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            BORROW NOW
+          </button>
+        </div>
+    </div>
+  </div>
+
+</section>
+<hr class="my-4 mx-auto w-96 h-1 bg-gray-200 rounded border-0 md:my-10 dark:bg-gray-700">
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-10 mx-auto">
+    <div class="flex flex-wrap -m-4 text-center">
+      <div class="p-4 sm:w-1/4 w-1/2">
+        <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">2.7K</h2>
+        <p class="leading-relaxed">Users</p>
+      </div>
+      <div class="p-4 sm:w-1/4 w-1/2">
+        <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">1.8K</h2>
+        <p class="leading-relaxed">Books</p>
+      </div>
+      <div class="p-4 sm:w-1/4 w-1/2">
+        <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">594</h2>
+        <p class="leading-relaxed">Magazines</p>
+      </div>
+      <div class="p-4 sm:w-1/4 w-1/2">
+        <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">28</h2>
+        <p class="leading-relaxed">Reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="text-gray-600 body-font relative">
+  <hr class="my-4 mx-auto w-96 h-1 bg-gray-200 rounded border-0 md:my-10 dark:bg-gray-700">
+  <div class="container px-5 py-24 pt-10 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+    </div>
+    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+      <div class="flex flex-wrap -m-2">
+        <div class="p-2 w-1/2">
+          <div class="relative">
+            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+            <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" spellcheck="false" data-ms-editor="true">
+          </div>
+        </div>
+        <div class="p-2 w-1/2">
+          <div class="relative">
+            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+            <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          </div>
+        </div>
+        <div class="p-2 w-full">
+          <div class="relative">
+            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+            <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" spellcheck="false" data-ms-editor="true"></textarea>
+          </div>
+        </div>
+        <div class="p-2 w-full">
+          <button
+            class="inline-block px-6 py-2.5 w-full text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-[#fcba03] hover:bg-yellow-400 bg-yellow-500 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-40 mb-3"
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            
+          >
+            SUBMIT
+          </button>
+        </div>
+        <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+          
+          <span class="inline-flex">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-4 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-4 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-4 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <script>
   const options = document.querySelectorAll("#sort_type option");
   options.forEach((option) => {
