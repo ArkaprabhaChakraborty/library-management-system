@@ -7,7 +7,7 @@ Library management system (Final Year Project) for the course of B.Tech in Compu
 1. [Arkaprabha Chakraborty](https://www.github.com/ArkaprabhaChakraborty)
 2. [Aniruddha Basak](https://www.github.com/aniruddha2000)
 ### Frontend team
-
+1. [Debarghya Pal](https://www.github.com/DebarghyaPal)
 
 
 # How to setup?
