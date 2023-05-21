@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .models import Student,Department 
 from django.contrib import auth
@@ -62,4 +63,5 @@ def signup(request):
             "departments":Department.objects.all(),
             "users":list(User.objects.values_list('username',flat=True))
         })
+    
 
